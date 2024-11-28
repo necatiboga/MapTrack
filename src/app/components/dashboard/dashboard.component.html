@@ -1,0 +1,39 @@
+<div class="flex items-center flex-col laptop:flex-row gap-4">
+    <!-- Birinci Sütun -->
+    <div class="w-[342px] tablet:w-[1009px] tablet:h-[645px] laptop:h-[680px] laptop:w-7/12 py-4">
+        <!-- Title Map -->
+        <div class=" font-poppins font-medium leading-[24px] text-left text-[24px] text-black">Lorem Ipsum</div>
+        <!-- Leaflet Map -->
+         <div class="mt-6 w-full h-full min-h-[218px] tablet:min-h-[400px]">
+             <app-map [selectedMarkerData]="selectedMarkerData" (selectedMarker)="onMarkerSelected($event)"></app-map>
+         </div>
+    </div>
+    <!-- İkinci Sütun -->
+    <div class="tablet:w-[1009px] tablet:h-[458px] laptop:h-[680px] laptop:w-5/12 py-4 tablet:mt-5 laptop:mt-0">
+        <!-- Search -->
+         <div class="flex w-full justify-end">
+            <div class="flex justify-end items-center border border-[#D9D9D9] bg-white w-[327px] h-[40px] px-4 py-3 gap-2 rounded-full">
+                <input [(ngModel)]="searchText"
+                type="text" 
+                placeholder="Search" 
+                class="flex-grow outline-none bg-transparent placeholder-gray-500"
+                />
+                <img class="h-[16px] w-[16px] font-medium text-[#2C2C2C]" src="/search-icon.svg" alt="">
+            </div>
+        </div>
+        <!-- Device Cards -->
+        <div class="h-[645px] bg-white mt-2 shadow-device-cards rounded-xl overflow-y-scroll">
+            <div class="grid tablet:grid-cols-3 laptop:grid-cols-2 gap-2 p-4 justify-center">
+                 @for (marker of filteredMarkers; track trackByMarkerId(marker)) {
+                    <app-card (deviceClicked)="onDeviceClicked($event)" [selectedMarker]='selectedMarker' [marker]="marker"></app-card>
+                }
+                <!-- @for (item of cards; track item) {
+                    <app-card></app-card>
+                } -->
+            </div>
+            <!-- <app-humidty-temperature-popup></app-humidty-temperature-popup> -->
+            <!-- <app-temperature-popup></app-temperature-popup> -->
+            <!-- <app-humidity-popup></app-humidity-popup> -->
+        </div>
+    </div>
+</div>

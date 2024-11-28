@@ -1,0 +1,30 @@
+<button (click)="onClickDevice()" #myButton class="h-[158px] w-[264px] rounded-[15px] focus:border-2 focus:border-[#007DFC] py-[15px] px-[20px] grid gap-3 bg-[#F2F9FF] cursor-pointer">
+    <!-- Header -->
+    <div class="w-full h-[39px] items-center flex justify-between pr-1">
+        <!-- Title Container -->
+        <div class="">
+            <div class="font-poppins font-semibold text-[14px] leading-[21px] text-black">Sıcaklık ve Nem Sensörü</div>
+            <div class="font-poppins font-normal text-[12px] leading-[18px] text-[#00000080] text-left">{{marker?.name}}</div>
+        </div>
+        <!-- Battery -->
+        <div>
+            <img class="w-[29px] h-[14px]" src="/full-battery-icon.svg" alt="">
+        </div>
+    </div>
+    <!-- Status Information -->
+    <div class="flex gap-3">
+        <div class="flex items-center gap-2">
+            <img class="w-[24px]" src="/status-container.svg" alt="">
+            <div class="font-avenir font-normal text-[20px] leading-5 text-black">{{marker?.temperature}} °C</div>
+        </div>
+        <div class="flex items-center gap-2">
+            <img class="w-[24px]" src="humidity-container.svg" alt="">
+            <div class="font-avenir font-normal text-[20px] leading-5 text-black">% {{marker?.humidity}}</div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="flex w-[220px] gap-[99px] items-center justify-between">
+        <div class="font-poppins font-medium text-[10px] leading-[15px] text-black" >10/03/2024 08:12</div>
+        <img class="w-[32px] h-[32px]" src="/action-button.svg" alt="">
+    </div>
+</button>

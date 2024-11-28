@@ -1,0 +1,41 @@
+<div class="relative w-[309px] h-[219px]">
+    <img class="absolute top-[0px] right-[-10px] w-[50px] h-[85px] z-10" src="/map-pin.svg" alt="">
+    <div class="absolute bottom-0 right-0 w-[301px] h-[185px] bg-white shadow-pop-up rounded-lg">
+        <!-- Sensor Container -->
+        <div class="p-[10px] grid gap-[10px]">
+            <div class="flex gap-2 items-center">
+                <span class="font-poppins font-extrabold text-[16px] leading-4 text-[#0060C0]">Nem</span>
+                <span class="font-poppins font-normal text-[16px] leading-4 text-[#0060C0]">Ayarla</span>
+            </div>
+            <div class="font-poppins font-normal text-[12px] leading-3 text-[#00000080]">{{markerData?.name}}</div>
+        </div>
+        <div class="px-[20px] grid grid-cols-2 gap-4">
+            <div class="grid gap-2">
+                <div class="font-avenir font-normal text-[16px] leading-4 text-black">Mevcut</div>
+                <div class="flex gap-2 items-center">
+                    <img class="w-[20px]" src="/humidity-container.svg" alt="">
+                    <div class="font-avenir font-normal text-[16px] leading-4 text-black">% {{markerData?.humidity}}</div>
+                </div>
+            </div>
+            <div class="grid gap-2">
+                <div class="font-avenir font-normal text-[16px] leading-4 text-black">Yeni</div>
+                <div class="flex items-center relative"> 
+                    <span class="text-black absolute left-4 leading-4 text-[16px] font-bold font-poppins">%</span>
+                    <!--  p-10px yazıyor ama görselle örtüşmüyor bence 5px -->
+                    <input [(ngModel)]="humidity" class="w-[120px] rounded-lg border border-[#00000033] p-[5px] pl-[40px]" type="number" name="celcius"
+                        id="celcius">
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="px-[20px] p-[10px] flex justify-between">
+            <button (click)="onCancelClick()" class="w-[120px] rounded-lg border border-[#007DFC] px-[20px] py-[10px] gap-[10px] shadow-pop-up-button">
+                <div class="font-poppins font-normal text-[16px] leading-4 text-[#007DFC]">İptal et</div>
+            </button>
+            <button (click)="onUpdateClick()" class="w-[120px] rounded-lg bg-[#007DFC] px-[20px] py-[10px] gap-[10px] shadow-pop-up-button">
+                <div class="font-poppins font-normal text-[16px] leading-4 text-white">Güncelle</div>
+            </button>
+        </div>
+    </div>
+</div>

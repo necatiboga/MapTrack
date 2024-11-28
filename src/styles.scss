@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.scrollbar {
+    width: 3px;
+    height: 581px;
+    position: absolute;  /* veya relative, ihtiyaçlarınıza göre */
+    top: 351px;
+    left: 1803px;
+    background-color: rgba(0, 0, 0, 0.1);  /* Scroll'un arka planı */
+    border-radius: 39px 0px 0px 0px;  /* Yuvarlak köşe */
+    //opacity: 0;  /* Başlangıçta görünmez */
+    transition: opacity 0.3s ease-in-out;  /* Opaklık değişimi için geçiş */
+  }
+  
+  /* Kaydırıcıya hover etkisi ekleyebiliriz */
+  .scrollbar:hover {
+    opacity: 1;  /* Hover ile görünür hale gelir */
+    background-color: rgba(0, 0, 0, 0.3);  /* Hover ile arka plan rengini koyulaştırma */
+  }
+  
+  .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: unset !important;
+    color: unset !important;
+    box-shadow: unset !important;
+  }
+
+  .leaflet-popup-close-button {
+    display: none;
+  }
+
+  .leaflet-popup {
+    //transform: translate3d(370px, 389px, 0px);
+    bottom: -250px !important;
+    left: -300px !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    padding: 0 !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+  }

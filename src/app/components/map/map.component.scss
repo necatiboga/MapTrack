@@ -1,0 +1,12 @@
+/* Haritanın tam yükseklikte görünmesi için bir boyut belirleyin */
+#map {
+  height: 100%; /* Haritanın yüksekliği */
+  width: 100%;   /* Haritanın genişliği */
+  min-height: 400px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: unset !important;
+  color: unset !important;
+  box-shadow: unset !important;
+}
